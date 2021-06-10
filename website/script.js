@@ -8,7 +8,8 @@ function openNavbar(){
     
     NavOrb.style.transform = "scale(0.5,0.5) translate(calc(var(--navOrb)*(-1)),calc(var(--navOrb)/1.5*(-1)))";
     var navItems = NavOrb.getElementsByClassName('nav-items');
-    console.log(navItems[0]);
+
+    console.log(navItems);
     contentOrb.style.opacity = "0";
     reticle.style.opacity = "0";
 
@@ -67,18 +68,20 @@ function getNavData(){
         }).then(json => {
             console.log(json);
             // document.getElementById('navigation_menu').innerText = JSON.stringify(json, null, 2);
-            var UL = document.createElement('ul');
+            var UL = document.createElement('UL');
             var list = Object.keys(json).length;
             for(var i = 0;i<list;i++)
             {
-                var A = document.createElement('a');
+                var A = document.createElement('A');
                 A.setAttribute('href',json[Object.keys(json)[i]]['href']);
-                var LI = document.createElement('li')
+                A.innerHTML=`${Object.keys(json)[i]}`;
+                A.setAttribute("data-augmented-ui","tl-clip-x br-clip-inset both");
+                A.style.gridRow=`${i+2}/${i+3}`;
+                console.log(A.innerHTML)
+                var LI = document.createElement('LI')
                 LI.appendChild(A);
                 LI.setAttribute('class', "nav-items");
-                LI.style.gridRow=`${i+2}/${i+3}`;
-                LI.setAttribute("data-augmented-ui","tl-clip-x br-clip-inset both");
-                LI.innerText = Object.keys(json)[i];
+                
                 UL.appendChild(LI);
             }
             navBar.appendChild(UL);

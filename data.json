@@ -1,25 +1,25 @@
 {
-    "menu1":{
+    "About Me":{
         "href":"#",
         "detail":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, aspernatur in! Quasi quo eligendi, id aut, sint minima labore perferendis voluptate quas corporis ut magnam consequatur dicta eaque asperiores sed non et dolores voluptatem neque facere impedit iusto temporibus. Consectetur voluptas soluta quasi eum cupiditate quisquam tenetur consequuntur maiores enim quibusdam quis laborum sapiente sed magni vitae, officiis voluptatem nobis ea impedit id dolore. Cupiditate porro deserunt perferendis doloribus, quis iure ab quos consequatur vero commodi nihil fugit at alias veniam assumenda impedit tenetur. Debitis, beatae maxime vitae, exercitationem, omnis dolorum aperiam necessitatibus molestias dolorem minima optio? Consequatur, voluptas ipsa."
         },
-    "menu2":{
+    "projects":{
 
         "href":"#",
         "details":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, aspernatur in! Quasi quo eligendi, id aut, sint minima labore perferendis voluptate quas corporis ut magnam consequatur dicta eaque asperiores sed non et dolores voluptatem neque facere impedit iusto temporibus. Consectetur voluptas soluta quasi eum cupiditate quisquam tenetur consequuntur maiores enim quibusdam quis laborum sapiente sed magni vitae, officiis voluptatem nobis ea impedit id dolore. Cupiditate porro deserunt perferendis doloribus, quis iure ab quos consequatur vero commodi nihil fugit at alias veniam assumenda impedit tenetur. Debitis, beatae maxime vitae, exercitationem, omnis dolorum aperiam necessitatibus molestias dolorem minima optio? Consequatur, voluptas ipsa."
     },
 
-    "menu3":{
+    "technology":{
         "href":"#",
         "details":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, aspernatur in! Quasi quo eligendi, id aut, sint minima labore perferendis voluptate quas corporis ut magnam consequatur dicta eaque asperiores sed non et dolores voluptatem neque facere impedit iusto temporibus. Consectetur voluptas soluta quasi eum cupiditate quisquam tenetur consequuntur maiores enim quibusdam quis laborum sapiente sed magni vitae, officiis voluptatem nobis ea impedit id dolore. Cupiditate porro deserunt perferendis doloribus, quis iure ab quos consequatur vero commodi nihil fugit at alias veniam assumenda impedit tenetur. Debitis, beatae maxime vitae, exercitationem, omnis dolorum aperiam necessitatibus molestias dolorem minima optio? Consequatur, voluptas ipsa."
     },
 
-    "menu4":{
+    "recommendations":{
         "href":"#",
         "details":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, aspernatur in! Quasi quo eligendi, id aut, sint minima labore perferendis voluptate quas corporis ut magnam consequatur dicta eaque asperiores sed non et dolores voluptatem neque facere impedit iusto temporibus. Consectetur voluptas soluta quasi eum cupiditate quisquam tenetur consequuntur maiores enim quibusdam quis laborum sapiente sed magni vitae, officiis voluptatem nobis ea impedit id dolore. Cupiditate porro deserunt perferendis doloribus, quis iure ab quos consequatur vero commodi nihil fugit at alias veniam assumenda impedit tenetur. Debitis, beatae maxime vitae, exercitationem, omnis dolorum aperiam necessitatibus molestias dolorem minima optio? Consequatur, voluptas ipsa."
     },
 
-    "menu5":{
+    "Contact Me":{
         "href":"#",
         "details":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, aspernatur in! Quasi quo eligendi, id aut, sint minima labore perferendis voluptate quas corporis ut magnam consequatur dicta eaque asperiores sed non et dolores voluptatem neque facere impedit iusto temporibus. Consectetur voluptas soluta quasi eum cupiditate quisquam tenetur consequuntur maiores enim quibusdam quis laborum sapiente sed magni vitae, officiis voluptatem nobis ea impedit id dolore. Cupiditate porro deserunt perferendis doloribus, quis iure ab quos consequatur vero commodi nihil fugit at alias veniam assumenda impedit tenetur. Debitis, beatae maxime vitae, exercitationem, omnis dolorum aperiam necessitatibus molestias dolorem minima optio? Consequatur, voluptas ipsa."
     }

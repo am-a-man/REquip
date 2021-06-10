@@ -231,14 +231,25 @@ img{
 
 
 
+a{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration-line: none;
+    text-decoration-style: wavy;
+    color: black;
+    font-size: 5vh;
+}
+
 li{
     --aug-inlay-bg: purple;
     --aug-inlay-opacity : 1;
     height: 100%;
     width : 100%;
     margin-bottom : 2vh;
-    
-  
+    list-style-type:none;
 }
 
 
