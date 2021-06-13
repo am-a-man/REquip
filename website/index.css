@@ -17,7 +17,7 @@ hr{
     padding:0px;
     justify-items: center;
     align-items: center;
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
 }
 
 :root{
@@ -41,6 +41,7 @@ body{
 
 
 /* =================================================================footer======================================================= */
+
 #footer{
     font-size: var(--footer-font-size);
     display: grid;
@@ -95,6 +96,10 @@ body{
 }
 /*==============================================================Navigation-Bar==============================================================*/
 
+#menu-button{
+    display: none;
+}
+
 #navigation-bar{
     display:grid;
     grid-template-columns: repeat(10 , calc(var(--nav-width)/10));
@@ -102,22 +107,37 @@ body{
     font-weight: bold;
 }
 
-#navigation-bar .nav-items a:active{
+#menu-bar{
+    grid-row:1/2;
+    grid-column: 8;
+    display: grid;
+    grid-template-columns: repeat(3, calc(var(--nav-width)/10));
+    grid-template-rows: auto;
+    width:100%;
+
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#navigation-bar #menu-bar .nav-items a:active{
     background-color: gray;
     color: white;
 }
 
 
-#navigation-bar .nav-items a{
+#navigation-bar #menu-bar .nav-items a{
     text-decoration: none;
     color: black;
-    width:100%;
-    margin: 10px 0px 0px 0px;
+    
+ 
     /* height:100%; */
-    display: inline-block;
+    display: block;
+
     padding: 10px 0px;
     text-align: center;
 }
+
 
 #name a{
     display: inline-block;
@@ -126,6 +146,7 @@ body{
     width:100%;
     text-decoration: none;
     color: black;
+
 }
 
 #name p{
@@ -144,24 +165,30 @@ body{
 }
 
 #info {
-    grid-column: 8/9;
+    grid-column: 1/2;
     grid-row: 1/2;
+    width: 100%;
+
+
 }
 
 
 #updates{   
-    grid-column: 9/10;
+    grid-column: 2/3;
     grid-row: 1/2;
+
 }
 
 #showcase{
-    grid-column: 10/11;
+    grid-column: 3/4;
     grid-row: 1/2;
+
 }
 
 .nav-items{
     height: 100%;
-    width:100%; 
+    width:100%;
+    display: block;
 
 }
 
@@ -175,6 +202,7 @@ body{
     padding: 25px 0px;
 
 }
+
 
 #showcase-items{
     display: flex;
@@ -229,6 +257,7 @@ body{
     margin:0;
     text-align: left;
     padding:0;
+    font-size: var(--font-size);
     width:100%;
 
 }
@@ -240,5 +269,110 @@ body{
 
     margin:0;
     padding:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================================Reponsive============================================================== */
+
+
+
+/* 
+most of the site is already reponsive, the only componenets we have to alter are navBar and Footer
+*/
+
+
+@media only screen and (max-width : 760px){
+    #name{
+        grid-column: 1/11;
+    }
+
+ 
+    #menu-bar{
+        height:100vh;
+        width:0vw;
+        position: fixed;
+        right: 0;
+        background-color: rgb(224, 223, 219);
+        grid-template-columns: auto;
+        grid-template-rows: 10vh 10vh 10vh 10vh; 
+    }
+
+    /* #menu-button:focus{
+        outline:none;
+        box-shadow: none;
+    } */
+
+    #info{
+
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    #updates{
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    #showcase{
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+
+    #menu-button{
+        display: block;
+        position:fixed;
+        right:0;
+        top:25vh;
+        width: 100px;
+        height: 100px;
+        background: transparent;
+        border:transparent; 
+        z-index: 2;
+    }
+    
+    #menu-button:focus{
+        outline:none;
+        box-shadow: none;
+    }
+
+    #menu-button img{
+        position: relative;
+        top:-39.5vh;
+        height:100vh;
+        width:100px;
+    }
+
+
+    #footer{
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: auto auto;
+    }
+    #left-footer{
+        grid-column: 1/3;
+        grid-row: 1/2;
+        text-align: center;
+    }
+
+    #right-footer{
+        grid-template-columns: 2/3;
+        grid-template-rows: 2/3;
+    }
+    
+    #center-footer{
+        grid-template-columns: 1/2;
+        grid-template-rows: 2/3;
+        
+    }
+
 
 }

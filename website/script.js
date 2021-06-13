@@ -71,13 +71,32 @@ async function navInterface(arg){
 }
 
 
+
+async function showMenu()
+{
+    var button = document.getElementById("menu-bar");
+    button.style.transition="width 1s"
+
+    if(button.style.width && button.style.width != "0vw"){
+        button.style.width = "0vw";
+    }
+    else{
+        button.style.width = "100vw";
+    }
+}
+
+
 async function getCommonItems()
 {
     
     console.log(document.getElementsByTagName("body"));
     var text = document.getElementsByTagName("body")[0];
 
-    text.innerHTML = `<div id="navigation-bar">
+    text.innerHTML = `
+    
+    <button id = "menu-button" onclick="showMenu()"><img src="https://raw.githubusercontent.com/houseofgeeks/hg/front-end/client/src/components/Navbar/side-bar.svg" class="blackWave" alt="sidebar"></button>
+
+    <div id="navigation-bar">
         
         <div id="name"><a href="#" onclick = "navInterface('showcase')" >
             <p>
@@ -85,10 +104,12 @@ async function getCommonItems()
             </p>
         </a></div>
 
-        <div class = "nav-items" id="info"><a href="#" onclick = "navInterface('info')">Info</a></div>
-        <div class = "nav-items" id="updates"><a href="#" onclick = "navInterface('updates')">Updates</a></div>
-        <div class = "nav-items" id="showcase"><a href="#" onclick = "navInterface('showcase')">Showcase</a></div>
-
+        <div id = "menu-bar" > 
+            
+            <div class = "nav-items" id="info"><a href="#" onclick = "navInterface('info')">Info</a></div>
+            <div class = "nav-items" id="updates"><a href="#" onclick = "navInterface('updates')">Updates</a></div>
+            <div class = "nav-items" id="showcase"><a href="#" onclick = "navInterface('showcase')">Showcase</a></div>
+        </div>
     </div>
         
     <hr>
@@ -241,8 +262,16 @@ async function openShowcase()
 
 
 
+function responsiveScreen(x){
+    if(x.matches){
+        document.getElementsByTagName('body')[0].style.backgroundColor = "black";
+    }
+}
+
+
 function start(){
     window.onload = navInterface;
+y
 }
 
 
