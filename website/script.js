@@ -245,6 +245,7 @@ async function openShowcase()
         P.innerText = data['projects'][keys[i]]['stack'];
 
         IMG.setAttribute('src', data['projects'][keys[i]]["logo"])
+        IMG.setAttribute("alt",  "Project-logo");
         A.appendChild(IMG);
         A.appendChild(H1);
         A.appendChild(P);
