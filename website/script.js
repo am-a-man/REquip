@@ -280,7 +280,7 @@ function responsiveScreen(x){
 
 
 function start(){
-    window.onload = await navInterface();
+    window.onload = await navInterface;
 
 }
 
