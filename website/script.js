@@ -46,19 +46,19 @@ async function navInterface(arg){
         case "showcase":
             selectNav("showcase");
             document.getElementById("showcase-pallete").getElementsByTagName('h1')[0].innerText="showcase";
-            openShowcase();
+            await openShowcase();
             break;
 
         case "info":
             selectNav("info");
             document.getElementById("showcase-pallete").getElementsByTagName('h1')[0].innerText="info";
-            openInfo();
+            await openInfo();
             break;
 
         case "updates":
             selectNav("updates");
             document.getElementById("showcase-pallete").getElementsByTagName('h1')[0].innerText="updates";
-            openUpdates();
+            await openUpdates();
             break;
     
         default:
@@ -163,24 +163,26 @@ async function openInfo(){
     var keys = Object.keys(data['info']);
 
     var UL = document.createElement('UL');
-    
-    for(var i = 0; i < keys.length; i++)
-    {
-        var A = document.createElement('A');
+    await loadData();
+    async function loadData(){
+        for(var i = 0; i < keys.length; i++)
+        {
+            var A = document.createElement('A');
+            
+            var H1 = document.createElement('H1');
+            var P = document.createElement('P')
+            H1.innerText = `${data['info'][keys[i]]['title']}:`;
+            P.innerText = data['info'][keys[i]]['detail'];
+
+            A.appendChild(H1);
+            A.appendChild(P);
+
+            A.setAttribute('href', data['info'][keys[i]]['href']);
         
-        var H1 = document.createElement('H1');
-        var P = document.createElement('P')
-        H1.innerText = `${data['info'][keys[i]]['title']}:`;
-        P.innerText = data['info'][keys[i]]['detail'];
-
-        A.appendChild(H1);
-        A.appendChild(P);
-
-        A.setAttribute('href', data['info'][keys[i]]['href']);
-    
-        var LI = document.createElement('LI');
-        LI.appendChild(A);
-        UL.appendChild(LI);
+            var LI = document.createElement('LI');
+            LI.appendChild(A);
+            UL.appendChild(LI);
+        }
     }
     var listItems=UL.innerHTML;
     showcaseItems.innerHTML = listItems;
@@ -196,23 +198,26 @@ async function openUpdates(){
     var keys = Object.keys(data['updates']);
  
     var UL = document.createElement('ul');
-    for(var i = 0; i < keys.length; i++)
-    {
-        var A = document.createElement('A');
+    await loadData();
+    async function loadData(){
+        for(var i = 0; i < keys.length; i++)
+        {
+            var A = document.createElement('A');
+            
+            var H1 = document.createElement('H1');
+            var P = document.createElement('P')
+            H1.innerText = `${data['updates'][keys[i]]['title']}:`;
+            P.innerText = data['updates'][keys[i]]['detail'];
+
+            A.appendChild(H1);
+            A.appendChild(P);
+
+            A.setAttribute('href', data['updates'][keys[i]]['href']);
         
-        var H1 = document.createElement('H1');
-        var P = document.createElement('P')
-        H1.innerText = `${data['updates'][keys[i]]['title']}:`;
-        P.innerText = data['updates'][keys[i]]['detail'];
-
-        A.appendChild(H1);
-        A.appendChild(P);
-
-        A.setAttribute('href', data['updates'][keys[i]]['href']);
-    
-        var LI = document.createElement('LI');
-        LI.appendChild(A);
-        UL.appendChild(LI);
+            var LI = document.createElement('LI');
+            LI.appendChild(A);
+            UL.appendChild(LI);
+        }
     }
     var listItems=UL.innerHTML;
     showcaseItems.innerHTML=listItems;
@@ -225,39 +230,40 @@ async function openUpdates(){
 async function openShowcase()
 {
     var showcaseItems = document.getElementById('showcase-items');
-
     
     if(data==null)
-        await getData();
+    await getData();
     
     var keys = Object.keys(data['projects']);
-
-
+    
+    
     var UL = document.createElement('UL');
+    await loadData();
+    async function loadData() {
+        for(var i = 0; i < keys.length; i++)
+        {
+            var A = document.createElement('A');
+            var IMG = document.createElement("IMG");
+            var H1 = document.createElement('H1');
+            var P = document.createElement('P')
+            H1.innerText = `${data['projects'][keys[i]]['title']}:`;
+            P.innerText = data['projects'][keys[i]]['stack'];
 
-    for(var i = 0; i < keys.length; i++)
-    {
-        var A = document.createElement('A');
-        var IMG = document.createElement("IMG");
-        var H1 = document.createElement('H1');
-        var P = document.createElement('P')
-        H1.innerText = `${data['projects'][keys[i]]['title']}:`;
-        P.innerText = data['projects'][keys[i]]['stack'];
+            IMG.setAttribute('src', data['projects'][keys[i]]["logo"])
+            IMG.setAttribute("alt",  "Project-logo");
+            A.appendChild(IMG);
+            A.appendChild(H1);
+            A.appendChild(P);
 
-        IMG.setAttribute('src', data['projects'][keys[i]]["logo"])
-        IMG.setAttribute("alt",  "Project-logo");
-        A.appendChild(IMG);
-        A.appendChild(H1);
-        A.appendChild(P);
-
-        A.setAttribute('href', data['projects'][keys[i]]['href']);
-  
-        var LI = document.createElement('LI');
-        LI.appendChild(A);
-        UL.appendChild(LI);
-    }
-    var listItems = UL.innerHTML;
-    showcaseItems.innerHTML = listItems;
+            A.setAttribute('href', data['projects'][keys[i]]['href']);
+    
+            var LI = document.createElement('LI');
+            LI.appendChild(A);
+            UL.appendChild(LI);
+        }
+}
+var listItems = UL.innerHTML;
+showcaseItems.innerHTML = listItems;
 
 }
 
@@ -272,7 +278,7 @@ function responsiveScreen(x){
 
 function start(){
     window.onload = navInterface;
-y
+
 }
 
 
