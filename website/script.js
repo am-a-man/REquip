@@ -111,7 +111,8 @@ async function getCommonItems()
             <div class = "nav-items" id="showcase"><a href="#" onclick = "navInterface('showcase')">Showcase</a></div>
         </div>
     </div>
-        
+        <img src = "./assets/common/wall.jpg">
+        <img src = "./assets/common/title-icon.png">
     <hr>
     <div id="showcase-pallete">
         <h1 style="text-transform:capitalize"></h1>
@@ -163,27 +164,27 @@ async function openInfo(){
     var keys = Object.keys(data['info']);
 
     var UL = document.createElement('UL');
-    await loadData();
-    async function loadData(){
-        for(var i = 0; i < keys.length; i++)
-        {
-            var A = document.createElement('A');
-            
-            var H1 = document.createElement('H1');
-            var P = document.createElement('P')
-            H1.innerText = `${data['info'][keys[i]]['title']}:`;
-            P.innerText = data['info'][keys[i]]['detail'];
 
-            A.appendChild(H1);
-            A.appendChild(P);
 
-            A.setAttribute('href', data['info'][keys[i]]['href']);
+    for(var i = 0; i < keys.length; i++)
+    {
+        var A = document.createElement('A');
         
-            var LI = document.createElement('LI');
-            LI.appendChild(A);
-            UL.appendChild(LI);
-        }
+        var H1 = document.createElement('H1');
+        var P = document.createElement('P')
+        H1.innerText = `${data['info'][keys[i]]['title']}:`;
+        P.innerText = data['info'][keys[i]]['detail'];
+
+        A.appendChild(H1);
+        A.appendChild(P);
+
+        A.setAttribute('href', data['info'][keys[i]]['href']);
+    
+        var LI = document.createElement('LI');
+        LI.appendChild(A);
+        UL.appendChild(LI);
     }
+
     var listItems=UL.innerHTML;
     showcaseItems.innerHTML = listItems;
 }
@@ -198,27 +199,26 @@ async function openUpdates(){
     var keys = Object.keys(data['updates']);
  
     var UL = document.createElement('ul');
-    await loadData();
-    async function loadData(){
-        for(var i = 0; i < keys.length; i++)
-        {
-            var A = document.createElement('A');
-            
-            var H1 = document.createElement('H1');
-            var P = document.createElement('P')
-            H1.innerText = `${data['updates'][keys[i]]['title']}:`;
-            P.innerText = data['updates'][keys[i]]['detail'];
-
-            A.appendChild(H1);
-            A.appendChild(P);
-
-            A.setAttribute('href', data['updates'][keys[i]]['href']);
+    
+    for(var i = 0; i < keys.length; i++)
+    {
+        var A = document.createElement('A');
         
-            var LI = document.createElement('LI');
-            LI.appendChild(A);
-            UL.appendChild(LI);
-        }
+        var H1 = document.createElement('H1');
+        var P = document.createElement('P')
+        H1.innerText = `${data['updates'][keys[i]]['title']}:`;
+        P.innerText = data['updates'][keys[i]]['detail'];
+
+        A.appendChild(H1);
+        A.appendChild(P);
+
+        A.setAttribute('href', data['updates'][keys[i]]['href']);
+    
+        var LI = document.createElement('LI');
+        LI.appendChild(A);
+        UL.appendChild(LI);
     }
+
     var listItems=UL.innerHTML;
     showcaseItems.innerHTML=listItems;
 }
@@ -238,33 +238,33 @@ async function openShowcase()
     
     
     var UL = document.createElement('UL');
-    await loadData();
-    async function loadData() {
-        for(var i = 0; i < keys.length; i++)
-        {
-            var A = document.createElement('A');
-            var IMG = document.createElement("IMG");
-            var H1 = document.createElement('H1');
-            var P = document.createElement('P')
-            H1.innerText = `${data['projects'][keys[i]]['title']}:`;
-            P.innerText = data['projects'][keys[i]]['stack'];
+  
+ 
+    for(var i = 0; i < keys.length; i++)
+    {
+        var A = document.createElement('A');
+        var IMG = document.createElement("IMG");
+        var H1 = document.createElement('H1');
+        var P = document.createElement('P')
+        H1.innerText = `${data['projects'][keys[i]]['title']}:`;
+        P.innerText = data['projects'][keys[i]]['stack'];
 
-            IMG.setAttribute('src', data['projects'][keys[i]]["logo"])
-            IMG.setAttribute("alt",  "Project-logo");
-         
-            A.appendChild(IMG);
-            A.appendChild(H1);
-            A.appendChild(P);
-            
-            A.setAttribute('href', data['projects'][keys[i]]['href']);
-    
-            var LI = document.createElement('LI');
-            LI.appendChild(A);
-            UL.appendChild(LI);
-        };
-}
-var listItems = UL.innerHTML;
-showcaseItems.innerHTML = listItems;
+        IMG.setAttribute('src', data['projects'][keys[i]]["logo"])
+        IMG.setAttribute("alt",  "Project-logo");
+        
+        A.appendChild(IMG);
+        A.appendChild(H1);
+        A.appendChild(P);
+        
+        A.setAttribute('href', data['projects'][keys[i]]['href']);
+
+        var LI = document.createElement('LI');
+        LI.appendChild(A);
+        UL.appendChild(LI);
+    };
+
+    var listItems = UL.innerHTML;
+    showcaseItems.innerHTML = listItems;
 
 }
 
