@@ -247,8 +247,8 @@ async function openShowcase()
         var P = document.createElement('P')
         H1.innerText = `${data['projects'][keys[i]]['title']}:`;
         P.innerText = data['projects'][keys[i]]['stack'];
-
-        IMG.setAttribute('src', data['projects'][keys[i]]["logo"])
+        console.log(data);
+        IMG.setAttribute("src", `${data['projects'][keys[i]]["logo"]}`)
         IMG.setAttribute("alt",  "Project-logo");
         
         A.appendChild(IMG);
