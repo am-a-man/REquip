@@ -251,13 +251,11 @@ async function openShowcase()
 
             IMG.setAttribute('src', data['projects'][keys[i]]["logo"])
             IMG.setAttribute("alt",  "Project-logo");
-            try{
+         
             A.appendChild(IMG);
             A.appendChild(H1);
             A.appendChild(P);
-            }catch(err){
-                console.log(err);
-            };
+            
             A.setAttribute('href', data['projects'][keys[i]]['href']);
     
             var LI = document.createElement('LI');
@@ -280,7 +278,12 @@ function responsiveScreen(x){
 
 
 function start(){
-    window.onload = await navInterface;
+    try{
+    window.onload = navInterface;
+    }
+    catch(error){
+        console.log(error);
+    }
 
 }
 
