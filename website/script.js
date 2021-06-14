@@ -111,8 +111,7 @@ async function getCommonItems()
             <div class = "nav-items" id="showcase"><a href="#" onclick = "navInterface('showcase')">Showcase</a></div>
         </div>
     </div>
-        <img src = "./assets/common/wall.jpg">
-        <img src = "./assets/common/title-icon.png">
+
     <hr>
     <div id="showcase-pallete">
         <h1 style="text-transform:capitalize"></h1>
