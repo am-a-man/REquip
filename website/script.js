@@ -251,16 +251,19 @@ async function openShowcase()
 
             IMG.setAttribute('src', data['projects'][keys[i]]["logo"])
             IMG.setAttribute("alt",  "Project-logo");
+            try{
             A.appendChild(IMG);
             A.appendChild(H1);
             A.appendChild(P);
-
+            }catch(err){
+                console.log(err);
+            };
             A.setAttribute('href', data['projects'][keys[i]]['href']);
     
             var LI = document.createElement('LI');
             LI.appendChild(A);
             UL.appendChild(LI);
-        }
+        };
 }
 var listItems = UL.innerHTML;
 showcaseItems.innerHTML = listItems;
