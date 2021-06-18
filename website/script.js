@@ -77,11 +77,30 @@ async function showMenu()
     var button = document.getElementById("menu-bar");
     button.style.transition="width 1s"
 
+
     if(button.style.width && button.style.width != "0vw"){
         button.style.width = "0vw";
+
+        setTimeout(() => {
+            navItems = document.getElementsByClassName("nav-items");
+        
+            for(var i = 0;i<navItems.length;i++)
+            {
+                navItems[i].style.display="none";
+            } 
+        }, 650);
+
     }
     else{
         button.style.width = "100vw";
+ 
+
+        navItems = document.getElementsByClassName("nav-items");
+        for(var i = 0;i<navItems.length;i++)
+        {
+            navItems[i].style.display="block";
+        }
+        
     }
 }
 

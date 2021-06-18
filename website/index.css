@@ -317,7 +317,6 @@ most of the site is already reponsive, the only componenets we have to alter are
         box-shadow: none;
     } */
 
-
  
 
     #info{
@@ -360,7 +359,9 @@ most of the site is already reponsive, the only componenets we have to alter are
         height:70vh;
         width:60px;
     }
-
+    .nav-items{
+        display: none;
+    }
 
     #footer{
         grid-template-columns: 50vw 50vw;
