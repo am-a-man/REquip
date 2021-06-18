@@ -1,18 +1,5 @@
 var data = null;
 
-async function ping(){
-    setTimeout(() => {
-        console.log("sending ping to skiadrum.heroku");
-        fetch("https://skiadrum.herokuapp.com/ping").then(res => {
-            return res.json();
-        }).then(json => {
-            console.log(json);
-            return json;
-        });
-        ping();
-    }, 5*1000);
-
-}
 
 function selectNav(id)
 {
