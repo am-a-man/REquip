@@ -26,10 +26,10 @@ var corsOptions = {
 app.get('/ping',cors(corsOptions), (req, res)=>{
 
     console.log("received ping from skiadrum.herokuapp.com");
-    function ping(){
+    async function ping(){
         setTimeout(() => {
             console.log("sending ping to skiadrum.heroku");
-            fetch("https://skiadrum.herokuapp.com/ping").then(res => {
+            await fetch("https://skiadrum.herokuapp.com/ping").then(res => {
                 return res.json();
             }).then(json => {
                 console.log(json);
