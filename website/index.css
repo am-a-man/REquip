@@ -23,7 +23,7 @@ hr{
 :root{
     --showcase-item-width : calc((var(--showcase-item-width)-30px)/3)
     --font-size : 10px;
-    --window-width: calc(100vw);
+    --window-width: calc(98.9vw);
     --nav-width : var(--window-width);   
     --footer-width : var(--window-width);
     --footer-font-size : var(--font-size);
@@ -35,8 +35,11 @@ body{
     padding:0;
     width: var(--window-width);
     height:100vh;
-    justify-items: center;
-    align-items: center
+    place-self:center;
+    justify-self: center;
+    align-self: center;
+    place-content: center;
+
 }
 
 
@@ -102,28 +105,28 @@ body{
 
 #navigation-bar{
     display:grid;
-    grid-template-columns: repeat(10 , calc(var(--nav-width)/10));
+    grid-template-columns: repeat(10 , calc(var(--nav-width)/10)) ;
     grid-template-rows: 20vh;
     font-weight: bold;
 }
 
 #menu-bar{
     grid-row:1/2;
-    grid-column: 7/10;
+    grid-column: 7/11;
     display: grid;
     grid-template-columns: repeat(3, calc(var(--nav-width)/10));
     grid-template-rows: auto;
     width:100%;
-
+    place-content: center;
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
 
-#navigation-bar #menu-bar .nav-items a:active{
+/* #navigation-bar #menu-bar .nav-items a:active{
     background-color: gray;
     color: white;
-}
+} */
 
 
 #navigation-bar #menu-bar .nav-items a{

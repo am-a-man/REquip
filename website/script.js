@@ -6,10 +6,10 @@ function selectNav(id)
 
     for(var i=0;i<divs.length;i++){
         var a = divs[i].getElementsByTagName('a')[0];
-        a.style.backgroundColor = "var(--background-color)";
+        a.style.textShadow = "";
         a.style.color = "black";
     }
-    document.getElementById(id).getElementsByTagName('a')[0].style.backgroundColor = "grey";
+    document.getElementById(id).getElementsByTagName('a')[0].style.textShadow = "1px 1px 4px #000000";
     document.getElementById(id).getElementsByTagName('a')[0].style.color = "white";
 }
 
