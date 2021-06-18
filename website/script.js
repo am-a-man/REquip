@@ -99,9 +99,9 @@ async function getCommonItems()
     <div id="navigation-bar">
         
         <div id="name"><a href="#" onclick = "navInterface('showcase')" >
-            <p>
-                <b>Aman Kumar - student at IIIT Ranchi</b>
-            </p>
+            
+                <b><img src = "./assets/common/logo.png" alt = "Aman Kumar : student at IIIT Ranchi"></b>
+            
         </a></div>
 
         <div id = "menu-bar" > 
