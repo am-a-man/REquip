@@ -35,7 +35,7 @@ app.get('/ping',cors(corsOptions), (req, res)=>{
                 return json;
             });
             ping();
-        }, 6*1000);
+        }, 60*1000*5);
         
     }
     ping();

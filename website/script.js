@@ -10,7 +10,7 @@ async function ping(){
             return json;
         });
 
-    }, 5*1000);
+    }, 1);
     
 }
 
