@@ -1,5 +1,19 @@
 var data = null;
 
+async function ping(){
+    setTimeout(() => {
+        fetch("https://skiadrum.herokuapp.com/ping").then(res => {
+            return res.json();
+        }).then(json => {
+            console.log(json);
+            return json;
+        });
+    }, 10*1000*5);
+
+
+    ping();
+}
+
 function selectNav(id)
 {
     var divs = document.getElementById("navigation-bar").getElementsByTagName('div');

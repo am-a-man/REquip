@@ -2,6 +2,8 @@
 
 const { response } = require('express');
 const express = require('express');
+const cors = require('cors');
+
 var fs = require('fs');
 
 
@@ -11,6 +13,23 @@ app.listen(process.env.PORT || 8000, ()=> {
 })
 
 app.use(express.static('./website'));
+app.use(cors());
+
+
+var corsOptions = {
+    origin: ['http://127.0.0.1:5500','http://127.0.0.1:8000', 'https://skiadrum.herokuapp.com'],
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+    
+}
+
+
+
+app.get('/ping',cors(corsOptions), (req, res)=>{
+    return res.send({
+        "recieved":"true"
+    })
+})
+
 
 app.get('/data' , (request, response) => {
   try{ 
@@ -25,4 +44,5 @@ app.get('/data' , (request, response) => {
     }
 
 });
+
 
