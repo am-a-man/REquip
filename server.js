@@ -1,5 +1,4 @@
 
-
 const { response } = require('express');
 const express = require('express');
 const cors = require('cors');
@@ -36,7 +35,7 @@ app.get('/ping',cors(corsOptions), (req, res)=>{
                 return json;
             });
             ping();
-        }, 5*1000);
+        }, 6*1000);
         
     }
     ping();
