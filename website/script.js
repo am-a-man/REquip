@@ -2,7 +2,7 @@ var data = null;
 
 async function ping(){
     setTimeout(() => {
-        console.log("sending ping to skiadrum.herokuapp.com");
+        console.log("sending ping to skiadrum.heroku");
         fetch("https://skiadrum.herokuapp.com/ping").then(res => {
             return res.json();
         }).then(json => {
@@ -310,9 +310,9 @@ function responsiveScreen(x){
 
 
 function start(){
-    ping();
     try{
     window.onload = navInterface;
+    ping();
     }
     catch(error){
         console.log(error);
