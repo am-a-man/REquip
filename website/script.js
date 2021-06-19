@@ -1,18 +1,5 @@
 var data = null;
 
-async function ping(){
-    setTimeout(() => {
-        console.log("sending ping to skiadrum.heroku");
-        fetch("https://skiadrum.herokuapp.com/ping").then(res => {
-            return res.json();
-        }).then(json => {
-            console.log(json);
-            return json;
-        });
-
-    }, 1);
-    
-}
 
 function selectNav(id)
 {
@@ -312,7 +299,7 @@ function responsiveScreen(x){
 function start(){
     try{
     window.onload = navInterface;
-    ping();
+ 
     }
     catch(error){
         console.log(error);

@@ -6,9 +6,29 @@ const cors = require('cors');
 var fs = require('fs');
 const fetch = require("node-fetch");
 
+
+var limitPing = 0;
+
+function ping(){
+    setTimeout(() => {
+        console.log("sending ping to skiadrum.heroku");
+        fetch("http://skiadrum.herokuapp.com/ping").then(res => {
+            return res.json();
+        }).then(json => {
+            console.log(json);
+            return json;
+        });
+
+    }, 1);
+    
+}
+
+
+
 const app = express();
 app.listen(process.env.PORT || 8000, ()=> {
     console.log("server is starting");
+    ping();
 })
 
 app.use(express.static('./website'));
@@ -25,14 +45,25 @@ var corsOptions = {
 
 app.get('/ping',cors(corsOptions), (req, res)=>{
 
+    limitPing += 1;
+    if(limitPing>1){
+        limitPing-=1;
+        res.send({
+            "status":"received",
+            "throttling":"true"
+        });
+    }
+
+
     console.log("received ping from skiadrum.herokuapp.com");
     function ping(){
-        setTimeout(() => {
+        setTimeout(async () => {
             console.log("sending ping to skiadrum.heroku");
-            fetch("https://skiadrum.herokuapp.com/ping").then(res => {
+            await fetch("http://skiadrum.herokuapp.com/ping").then(res => {
                 return res.json();
             }).then(json => {
                 console.log(json);
+                limitPing-=1;
                 return json;
             });
         }, 1000*60*10);
@@ -40,6 +71,7 @@ app.get('/ping',cors(corsOptions), (req, res)=>{
     }
 
     ping();
+
     return res.send({
         "recieved":"true"
     })
