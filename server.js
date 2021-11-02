@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors');
 
 var fs = require('fs');
-const fetch = require("node-fetch");
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 
 var limitPing = 0;
@@ -78,6 +78,21 @@ app.get('/ping',cors(corsOptions), (req, res)=>{
     })
 })
 
+app.get('/resume', async (req, res) => {
+    res.contentType("application/pdf");
+    url = "https://docs.google.com/document/d/1cVR0NsAbQUBkfD98yzQF5DuUrj3B8-fhlbLc1oGjSEk/export?format=pdf";
+    var pdfData = await fetch(url,
+    {method: 'GET'})
+    .then( res => {return res.buffer();} );
+    
+    const stream = res.writeHead(200, {
+        'Content-Type':'application/pdf',
+    });
+    
+    stream.write(pdfData);
+    stream.end();
+
+})
 
 app.get('/data' , (request, response) => {
   try{ 
