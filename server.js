@@ -84,7 +84,7 @@ app.get('/resume', async (req, res) => {
     var pdfData = await fetch(url,
     {method: 'GET'})
     .then( res => {return res.buffer();} );
-    
+    console.log("pdfData");
     const stream = res.writeHead(200, {
         'Content-Type':'application/pdf',
     });
