@@ -78,7 +78,7 @@ app.get('/ping',cors(corsOptions), (req, res)=>{
     })
 })
 
-app.get('/resume', async (req, res) => {
+app.get('/resume/Resume_Aman_Kumar_Software_Devlopment', async (req, res) => {
     res.contentType("application/pdf");
     url = "https://docs.google.com/document/d/1cVR0NsAbQUBkfD98yzQF5DuUrj3B8-fhlbLc1oGjSEk/export?format=pdf";
     var pdfData = await fetch(url,
